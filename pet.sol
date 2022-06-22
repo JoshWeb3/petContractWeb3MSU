@@ -30,6 +30,18 @@ contract pet {
         return age;
     }
 
-    //feed function
+    /* returns the time since last meal */
+    function timeSinceLastMeal() internal returns (uint) {
+        uint timeSinceLastMeal;
+
+        return timeSinceLastMeal;
+    }
+
+    /*isHungry function that returns whether the pet is hungry or not*/
+    function isHungry() internal returns (bool) {
+        return hunger;
+    }
+
+    /*feed function*/
     function feed() {}
 }
