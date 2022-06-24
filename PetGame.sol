@@ -5,6 +5,10 @@ pragma solidity ^0.8.0;
 import "./pet.sol";
 
 
+/*************************************************/
+/* petsGame will act as a client for our game */
+/* pet will act as the pet */
+/*************************************************/
 
 contract petsGame {
 
@@ -20,26 +24,27 @@ struct owner {
     //counter for number of pets
     uint numOfPets;
 
-    //array of pets
+    //array of pets, will act as list of all the owners pets
     pet myPets[];
 	
 
     //setters
     function setNumOfPets(uint newNum) internal {
         numOfPets = newNum;
-    }
+    };
     //getters
     function getNumOfPets internal returns (uint) {
         return numOfPets;
-    }
+    };
 
     //create pet function
     function createPet(){
-        pet newPet = new pet();
-    //select owner in ownerList[];
-    //push new pet into owners myPets[] array
+        //creates new pet NFT
+        pet newPet = new pet(); // we can make a constructor for pet
+        
+        //push new pet into owners myPets[] array
 
-    }
+    };
 }
 }
 
