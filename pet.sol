@@ -10,6 +10,13 @@ contract pet {
     string mood;
     uint age;
 
+    constructor (_name, _mood, _age) public {
+        name = setName(_name);
+        owner = msg.address;
+        mood = setMood(_mood);
+        age = setAge(_age);
+    }
+
     //setter functions
     function setName(string memory _name) public {
         name = _name;
