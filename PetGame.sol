@@ -12,40 +12,40 @@ import "./pet.sol";
 
 contract petsGame {
 
-//array of owners
-owners ownerList[];
+    //array of owners
+    owners ownerList[];
 
-//address to owner mapping
-mapping (address => owner) public addressToOwner;
+    //address to owner mapping
+    mapping (address => owner) public addressToOwner;
 
-//owner data structure
-struct owner {
+    //owner data structure
+    struct owner {
 
-    //counter for number of pets
-    uint numOfPets;
+        //counter for number of pets
+        uint numOfPets;
 
-    //array of pets, will act as list of all the owners pets
-    pet myPets[];
-	
-
-    //setters
-    function setNumOfPets(uint newNum) internal {
-        numOfPets = newNum;
-    };
-    //getters
-    function getNumOfPets internal returns (uint) {
-        return numOfPets;
-    };
-
-    //create pet function
-    function createPet(){
-        //creates new pet NFT
-        pet newPet = new pet(); // we can make a constructor for pet
+        //array of pets, will act as list of all the owners pets
+        pet myPets[];
         
-        //push new pet into owners myPets[] array
+        //setters
+        function setNumOfPets(uint newNum) internal {
+            numOfPets = newNum;
+        };
+        //getters
+        function getNumOfPets internal returns (uint) {
+            return numOfPets;
+        };
 
-    };
-}
+        //create pet function
+        function createPet(string memory name, string memory mood, uint memory age){
+            //creates new pet NFT
+            pet newPet = new pet(name,mood,age); // we can make a constructor for pet
+            
+            //push new pet into owners myPets[] array
+            myPets.push(newPet);
+            setNumOfPets((getNumOfPets() + 1));
+        };
+    }
 }
 
 
