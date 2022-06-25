@@ -1,9 +1,8 @@
-// SPDX-License-Identifier: MIT 
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
 import "./pet.sol";
-
 
 /*************************************************/
 /* petsGame will act as a client for our game */
@@ -11,30 +10,36 @@ import "./pet.sol";
 /*************************************************/
 
 contract petsGame {
-
     //array of owners
-    owners ownerList[];
+    owner[] ownerList;
 
     //address to owner mapping
-    mapping (address => owner) public addressToOwner;
+    mapping(address => owner) public addressToOwner;
 
     //owner data structure
     struct owner {
-
         //counter for number of pets
         uint numOfPets;
-
         //array of pets, will act as list of all the owners pets
-        pet myPets[];
-        
-        //setters
-        function setNumOfPets(uint newNum) internal {
-            numOfPets = newNum;
-        };
-        //getters
-        function getNumOfPets internal returns (uint) {
-            return numOfPets;
-        };
+        pet[] myPets;
+    }
+
+    //we want the setters and getters to:
+    // 1. input msg.sender(caller's address) into mappings => to an owner struct,
+    // 2. then parse through ownersList array of owner type.
+    // 3. get values that way
+
+    /*    //setters
+    //set number of pets
+    function setNumOfPets(uint newNum) internal {
+        numOfPets = newNum;
+    }
+
+    //getters
+    //get number of pets
+    function getNumOfPets public returns (uint) {
+        return numOfPets;
+    };
 
         //create pet function
         function createPet(string memory name, string memory mood, uint memory age){
@@ -44,8 +49,7 @@ contract petsGame {
             //push new pet into owners myPets[] array
             myPets.push(newPet);
             setNumOfPets((getNumOfPets() + 1));
-        };
-    }
+
+    };
+*/
 }
-
-

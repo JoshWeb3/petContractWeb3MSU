@@ -10,33 +10,26 @@ contract pet {
     string mood;
     uint age;
 
-    constructor (_name, _mood, _age) public {
-        name = setName(_name);
-        owner = msg.address;
-        mood = setMood(_mood);
-        age = setAge(_age);
-    }
-
     //setter functions
-    function setName(string memory _name) public {
+    function setName(string memory _name) internal {
         name = _name;
     }
 
-    function setMood(string memory _mood) public {
+    function setMood(string memory _mood) internal {
         mood = _mood;
     }
 
-    function setAge(uint memory _age) public {
-        _age = age;
+    function setAge(uint _age) internal {
+        age = _age;
     }
 
     //getter function
 
-    function getName() public view returns (string) {
+    function getName() public view returns (string memory) {
         return name;
     }
 
-    function getMood() public view returns (string) {
+    function getMood() public view returns (string memory) {
         return mood;
     }
 
@@ -48,8 +41,7 @@ contract pet {
     function timeSinceLastMeal() internal returns (uint) {
         //needs to be built
         //need to make a way to track the time since last ate
-        uint timeSinceLastMeal;
-        return timeSinceLastMeal;
+        //return timeSinceLastMeal;
     }
 
     /*isHungry function that returns whether the pet is hungry or not*/
@@ -58,10 +50,10 @@ contract pet {
     //more info on time       https://soliditytips.com/articles/solidity-dates-time-operations/
     function isHungry() internal returns (bool) {
         //hunger system needs to be built
-        return hunger;
+        // return hunger;
     }
 
     /*feed function*/
     //feeding system needs to be built
-    function feed() {}
+    function feed() public {}
 }
