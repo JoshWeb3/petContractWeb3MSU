@@ -14,11 +14,12 @@ contract pet {
     constructor(string memory _name) {
         name = _name;
         lastMeal = block.timestamp;
+        birthday = block.timestamp;
     }
 
     string name;
     address owner;
-    uint birthday = block.timestamp;
+    uint birthday;
     uint lastMeal;
     //string mood;
 
