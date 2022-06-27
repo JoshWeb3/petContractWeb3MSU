@@ -5,9 +5,13 @@ pragma solidity ^0.8.0;
 contract pet {
     //we can make a constructor if we want, probably saves gas
 
+    constructor(string memory _name) {
+        name = _name;
+    }
+
     string name;
     address owner;
-    string mood;
+    string mood = "happy";
     uint age;
 
     //setter functions

@@ -29,27 +29,25 @@ contract petsGame {
     // 2. then parse through ownersList array of owner type.
     // 3. get values that way
 
-    /*    //setters
+    //setters
     //set number of pets
     function setNumOfPets(uint newNum) internal {
-        numOfPets = newNum;
+        addressToOwner[msg.sender].numOfPets = newNum;
     }
 
     //getters
     //get number of pets
-    function getNumOfPets public returns (uint) {
-        return numOfPets;
-    };
+    function getNumOfPets() public view returns (uint) {
+        return addressToOwner[msg.sender].numOfPets;
+    }
 
-        //create pet function
-        function createPet(string memory name, string memory mood, uint memory age){
-            //creates new pet NFT
-            pet newPet = new pet(name,mood,age); // we can make a constructor for pet
-            
-            //push new pet into owners myPets[] array
-            myPets.push(newPet);
-            setNumOfPets((getNumOfPets() + 1));
+    //create pet function
+    function createPet(string memory name) public {
+        //creates new pet NFT
+        pet newPet = new pet(name); // made constructor for name only -josh
 
-    };
-*/
+        //push new pet into owners myPets[] array
+        addressToOwner[msg.sender].myPets.push(newPet);
+        setNumOfPets((getNumOfPets() + 1));
+    }
 }
