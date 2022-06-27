@@ -24,11 +24,6 @@ contract petsGame {
         pet[] myPets;
     }
 
-    //we want the setters and getters to:
-    // 1. input msg.sender(caller's address) into mappings => to an owner struct,
-    // 2. then parse through ownersList array of owner type.
-    // 3. get values that way
-
     //setters
     //set number of pets
     function setNumOfPets(uint newNum) internal {
