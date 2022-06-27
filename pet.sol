@@ -44,7 +44,7 @@ contract pet {
 
     //returns the age of the pet
     function getAge() internal view returns (uint) {
-        return birthday - block.timestamp;
+        return (block.timestamp - birthday);
     }
 
     /* returns the time since last meal */
