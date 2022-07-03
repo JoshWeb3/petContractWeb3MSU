@@ -2,7 +2,7 @@ Hello!
 
 🚧GAME STILL UNDER CONSTRUCTION🚧
 
-Discover <Placeholder Name> Pets! A cute virtual pet that you can care for & grows over time! It's a pet that's yours forever and taking care of it will help animals in real life! 
+Discover < Placeholder Name > Pets! A cute virtual pet that you can care for & grows over time! It's a pet that's yours forever and taking care of it will help animals in real life! 
  
 💻 🐈
 
