@@ -7,7 +7,7 @@ Discover < Placeholder Name > Pets! A cute virtual pet that you can care for & g
 💻 🐈
 
 
-This a program that is a game that runs on the blockchain. This contract on the network will tell our web application what to display. 
+This a game is a contract that runs on the blockchain. This contract on the network will tell our web application what to display. 
  
 🌐🧠
  
